@@ -20,7 +20,7 @@ import Layout from "../layouts/Layout.astro";
     </div>
     <div
       id="countdown"
-      class="w-full flex justify-center text-center gap-12 text-xl md:text-6xl"
+      class="w-full flex justify-center text-center gap-6 md:gap-12 text-xl md:text-6xl"
     >
       <div>
         <h2 id="days">00</h2>
@@ -66,6 +66,7 @@ import Layout from "../layouts/Layout.astro";
     hours.innerHTML = tHours < 10 ? "0" + tHours : tHours;
     min.innerHTML = tMinutes < 10 ? "0" + tMinutes : tMinutes;
     sec.innerHTML = tSeconds < 10 ? "0" + tSeconds : tSeconds;
+
   };
 
   const countdownInterval = setInterval(() => {
