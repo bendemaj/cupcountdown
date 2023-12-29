@@ -4,15 +4,24 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="POKALFINALE - TSV Hartberg 🦈">
   <main
-    class="w-full h-[100vh] flex flex-col justify-center bg-sky-700 text-white font-semibold"
+    class="min-h-screen flex flex-col justify-center bg-sky-700 text-white font-semibold"
   >
     <div class="flex justify-center">
-      <h2 class="uppercase flex justify-center mb-10 text-7xl font-bold">🦈Pokalfinale🦈</h2>
+      <h2
+        class="uppercase flex justify-center mb-10 text-4xl md:text-7xl font-bold"
+      >
+        🦈Pokalfinale🦈
+      </h2>
     </div>
-	<div class="flex justify-center">
-		<h2 class=" flex justify-center mb-10 text-3xl ">Stadtwerke Hartberghalle</h2>
-	  </div>
-    <div id="countdown" class="w-full flex justify-center gap-12 text-6xl ">
+    <div class="flex justify-center">
+      <h2 class="flex justify-center mb-10 text-2xl md:text-3xl">
+        Stadtwerke Hartberghalle
+      </h2>
+    </div>
+    <div
+      id="countdown"
+      class="w-full flex justify-center text-center gap-12 text-xl md:text-6xl"
+    >
       <div>
         <h2 id="days">00</h2>
         <small>Tage</small>
@@ -45,7 +54,7 @@ import Layout from "../layouts/Layout.astro";
   const curDate: any = new Date();
 
   let diff = cntDate - curDate;
-  console.log("Developed with ♥️ by @bendemaj")
+  console.log("Developed with ♥️ by @bendemaj");
 
   const update = () => {
     const tDays: any = Math.max(Math.floor(diff / 1000 / 60 / 60 / 24));
