@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="POKALFINALE - TSV Hartberg 🦈">
+  <main
+    class="w-full h-[100vh] flex flex-col justify-center bg-sky-700 text-white font-semibold"
+  >
+    <div class="flex justify-center">
+      <h2 class="uppercase flex justify-center mb-10 text-7xl font-bold">🦈Pokalfinale🦈</h2>
+    </div>
+	<div class="flex justify-center">
+		<h2 class=" flex justify-center mb-10 text-3xl ">Stadtwerke Hartberghalle</h2>
+	  </div>
+    <div id="countdown" class="w-full flex justify-center gap-12 text-6xl ">
+      <div>
+        <h2 id="days">00</h2>
+        <small>Tage</small>
+      </div>
+      <div>
+        <h2 id="hours">00</h2>
+        <small>Stunden</small>
+      </div>
+      <div>
+        <h2 id="minutes">00</h2>
+        <small>Minuten</small>
+      </div>
+      <div>
+        <h2 id="seconds">00</h2>
+        <small>Sekunden</small>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const testDay = "Dec 29, 2023, 10:56:00";
+  const matchDay = "Feb 24, 2024, 20:30:00";
+  const days: any = document.getElementById("days");
+  const hours: any = document.getElementById("hours");
+  const min: any = document.getElementById("minutes");
+  const sec: any = document.getElementById("seconds");
+
+  const cntDate: any = new Date(matchDay);
+  const curDate: any = new Date();
+
+  let diff = cntDate - curDate;
+  console.log("Developed with ♥️ by @bendemaj")
+
+  const update = () => {
+    const tDays: any = Math.max(Math.floor(diff / 1000 / 60 / 60 / 24));
+    const tHours: any = Math.max(Math.floor(diff / 1000 / 60 / 60) % 24);
+    const tMinutes: any = Math.max(Math.floor(diff / 1000 / 60) % 60);
+    const tSeconds: any = Math.max(Math.floor(diff / 1000) % 60);
+
+    days.innerHTML = tDays;
+    hours.innerHTML = tHours < 10 ? "0" + tHours : tHours;
+    min.innerHTML = tMinutes < 10 ? "0" + tMinutes : tMinutes;
+    sec.innerHTML = tSeconds < 10 ? "0" + tSeconds : tSeconds;
+  };
+
+  const countdownInterval = setInterval(() => {
+    update();
+    diff -= 1000;
+    if (diff < 0) {
+      diff = 0;
+      clearInterval(countdownInterval);
+      days.innerHTML = "00";
+      hours.innerHTML = "00";
+      min.innerHTML = "00";
+      sec.innerHTML = "00";
+    }
+  }, 1000);
+</script>
