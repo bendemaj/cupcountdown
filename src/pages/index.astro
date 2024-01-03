@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="POKALFINALE - TSV Hartberg 🦈">
   <main
-    class="min-h-screen flex flex-col justify-center bg-sky-700 text-white font-semibold"
+    class="min-h-screen flex flex-col justify-center text-slate-800 font-semibold bg-center bg-cover bg-[url('public/resop.jpg')]  md:bg-[url('public/bgop.jpg')]"
   >
     <div class="flex justify-center">
       <h2
@@ -23,15 +23,15 @@ import Layout from "../layouts/Layout.astro";
       class="w-full flex justify-center text-center gap-6 md:gap-12 text-xl md:text-6xl"
     >
       <div>
-        <h2 id="days">00</h2>
+        <h2 id="days"></h2>
         <small>Tage</small>
       </div>
       <div>
-        <h2 id="hours">00</h2>
+        <h2 id="hours"></h2>
         <small>Stunden</small>
       </div>
       <div>
-        <h2 id="minutes">00</h2>
+        <h2 id="minutes"></h2>
         <small>Minuten</small>
       </div>
       <div>
@@ -40,6 +40,7 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
   </main>
+  
 </Layout>
 
 <script>
@@ -66,7 +67,6 @@ import Layout from "../layouts/Layout.astro";
     hours.innerHTML = tHours < 10 ? "0" + tHours : tHours;
     min.innerHTML = tMinutes < 10 ? "0" + tMinutes : tMinutes;
     sec.innerHTML = tSeconds < 10 ? "0" + tSeconds : tSeconds;
-
   };
 
   const countdownInterval = setInterval(() => {
