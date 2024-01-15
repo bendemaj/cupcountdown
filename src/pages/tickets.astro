@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import MarkusGaugl from "../../public/assets/MarkusGaugl.png";
+import KevinLoigge from "../../public/assets/KevinLoigge.jpg";
+---
+
+<Layout title="POKALFINALE - TSV Hartberg 🦈">
+  <div class="flex bg-[#2680cb] items-center justify-center h-screen">
+    <div class="text-center p-4 md:p-8 lg:p-12">
+      <!-- Added padding for larger screens -->
+      <div class="flex justify-center">
+        <h2
+          class="uppercase flex justify-center mb-3 md:mb-5 text-4xl md:text-4xl lg:text-7xl font-bold"
+        >
+          <!-- Responsive font size -->
+          TSV - Tickets
+        </h2>
+      </div>
+      <p class="text-black text-center mb-3 md:mb-5">
+        Hier bekommen Sie ihre Tickets.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        <div class="w-full md:w-64 bg-white rounded-md overflow-hidden">
+          <Image
+            src={MarkusGaugl}
+            alt="A bird sitting on a nest of eggs."
+            class="w-full h-48 md:h-64 object-cover"
+          />
+          <p class="text-black text-center mt-2 md:mt-4">
+            Markus Gaugl <br /> Tel.: +43 664 5174744
+          </p>
+        </div>
+        <div class="w-full md:w-64 bg-white rounded-md overflow-hidden">
+          <Image
+            src={KevinLoigge}
+            alt="Your second image description."
+            class="w-full h-48 md:h-64 object-cover"
+          />
+          <p class="text-black text-center mt-2 md:mt-4">
+            Kevin Loigge <br /> Tel.: 0664 1234567
+          </p>
+        </div>
+      </div>
+      <h2
+        class="uppercase mt-3 flex justify-center mb-5 text-1xl md:text-1xl font-bold"
+      >
+      </h2>
+    </div>
+  </div>
+</Layout>
